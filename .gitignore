@@ -5,6 +5,11 @@
 # 软件生成目录
 output/
 
+# 编辑器扩展生成中间文件
+_*.css
+
+###****(参考地址)[https://github.com/github/gitignore/blob/master/Node.gitignore]
+
 # Logs
 logs
 *.log
@@ -78,3 +83,5 @@ typings/
 
 # Serverless directories
 .serverless
+
+###****参考内容 end

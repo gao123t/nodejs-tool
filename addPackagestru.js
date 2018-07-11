@@ -61,7 +61,7 @@ function creatCommonFile(commondDirname, inputDirname) {
 creatCommonFile('common/_common.scss', 'output/' + muluName + '/css/' + muluName + '.scss');
 creatCommonFile('common/_common.js', 'output/' + muluName + '/js/' + muluName + '.js');
 creatCommonFile('common/_common.html', 'output/' + muluName + '/' + muluName + '.html');
-creatCommonFile('common/_common.html', 'output/' + muluName + '/content.txt');
+creatCommonFile('common/content.txt', 'output/' + muluName + '/content.txt');
 creatCommonFile('common/mock_data.js', 'output/' + muluName + '/js/mock_data.js');
 // 递归创建目录 同步方法
 /* 结果是：控制台没有打印出来 */

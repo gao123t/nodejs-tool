@@ -1,0 +1,20 @@
+// px2rem(10)
+// px2rem(10 20) px2rem(10 auto)
+// px2rem(10 20 16) px2rem(10 auto 20)
+// px2rem(10 15 20 25)
+@function px2rem($items, $base:64) {
+    $result: null;
+    @each $item in $items {
+        @if type-of($item) == number {
+            @if $item == 0{
+                $result: append($result, 0);
+            }@else{
+                $result: append($result, unquote($item/$base + 'rem'));
+            }
+        }
+        @else {
+            $result: append($result, $item);
+        }
+    }
+    @return $result;
+}

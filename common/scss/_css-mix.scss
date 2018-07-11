@@ -1,0 +1,33 @@
+$body-width: 10rem !default;
+%background-clip {
+  background-clip: padding-box;
+}
+
+%border-radius-oval {
+  border-radius: px2rem(100);
+
+  @extend %background-clip;
+}
+
+%border-radius-circle {
+  border-radius: 100%;
+
+  @extend %background-clip;
+}
+
+%margin-middle {
+  margin: 0 auto;
+}
+
+@mixin border-radius($value: px2rem(10)) {
+  border-radius: $value;
+
+  @extend %background-clip;
+}
+
+/*
+* box-sizing: border-box;
+* bug描述：在有  border: 1px dashed #a5c7a5;时iphone plus 会出现左边边框消失的 bug。
+*
+*/
+//
