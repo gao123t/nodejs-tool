@@ -1,6 +1,10 @@
 ﻿# 编辑器文件
 .vscode/
 
+
+# 软件生成目录
+output/
+
 # Logs
 logs
 *.log
