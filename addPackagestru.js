@@ -48,7 +48,6 @@ mkdirs('output/' +muluName + '/css/', () => {
 // 添加 scss 文件。把comman.scss 文件内容复制一份到新建的 scss 文件当中去。
 function creatCommonFile(commondDirname, inputDirname) {
   fs.readFile(commondDirname, 'utf8', function (_err, data) {
-    console.log(data)
     fs.writeFile(inputDirname, data.replace(/{{systemName}}/g, 'act').replace(/{{muluName}}/g, muluName), function (err) {
       if (err) {
         return console.error(err)

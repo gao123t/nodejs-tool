@@ -1,14 +1,17 @@
 $body-width: 10rem !default;
+// 红米手机不显示圆角 bug 解决
 %background-clip {
   background-clip: padding-box;
 }
 
+// 椭圆圆角
 %border-radius-oval {
   border-radius: px2rem(100);
 
   @extend %background-clip;
 }
 
+// 整个圆圈
 %border-radius-circle {
   border-radius: 100%;
 
@@ -19,15 +22,37 @@ $body-width: 10rem !default;
   margin: 0 auto;
 }
 
+// 设置圆角大小。默认为10
+// @include border-radius();or @include border-radius;
 @mixin border-radius($value: px2rem(10)) {
   border-radius: $value;
 
   @extend %background-clip;
 }
 
-/*
-* box-sizing: border-box;
-* bug描述：在有  border: 1px dashed #a5c7a5;时iphone plus 会出现左边边框消失的 bug。
-*
-*/
-//
+// 前提 box-sizing: border-box;
+// bug描述：在有  border: 1px dashed #a5c7a5;时iphone plus 会出现左边边框消失的 bug。
+// border:1px solid #fff
+// @include border-setting(1px solid #000) 或者 @include border-setting; 或者 @include border-setting($type: dashed);
+@mixin border-setting($value: 1px,$type: solid,$color:#000) {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+
+  border: $value $type $color;
+}
+
+
+// font-weight: 100;
+// bug描述：如果值是数字的话。设置为600的时候。ios显示粗体。Android 显示细体。
+// 解决办法：font-weight 如果是数字设置粗体的话。进行 warn 控制台警告。
+// font-weight:数字值 400 相当于 关键字 normal，700 等价于 bold。
+// @include font-weight-num-bold-setting(500);
+@mixin font-weight-num-bold-setting($value: 700) {
+  font-weight: $value;
+
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  @if $value < 700 {
+    @warn '粗体数字太小。在 android 会不加粗';
+  }
+}

@@ -8,6 +8,10 @@ output/
 # 编辑器扩展生成中间文件
 _*.css
 
+# 测试文件
+test/
+test.*
+
 ###****(参考地址)[https://github.com/github/gitignore/blob/master/Node.gitignore]
 
 # Logs
@@ -83,5 +87,14 @@ typings/
 
 # Serverless directories
 .serverless
+
+###****参考内容 end
+
+
+###****(参考地址)[https://github.com/github/gitignore/blob/master/Node.gitignore]
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 
 ###****参考内容 end
